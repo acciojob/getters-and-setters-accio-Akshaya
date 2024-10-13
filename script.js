@@ -1,5 +1,5 @@
 //complete this code
-class Person {
+window.Person = class Person {
 	contructor(name,age){
 		this._name = name;
 		this._age = age;
@@ -21,17 +21,17 @@ class Person {
 	
 }
 
-class Student extends Person {
+window.Student = class Student extends Person {
 	study(){
 		console.log('${this.name} is studying');
 	}
-}
+};
 
-class Teacher extends Person {
+window.Teacher = class Teacher extends Person {
 	teach(){
 		console.log('${this.name} is teaching');
 	}
-}
+};
 const person = new person("John",25);
 console.log(person.name);
 
