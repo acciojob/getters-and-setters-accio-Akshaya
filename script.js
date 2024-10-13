@@ -1,9 +1,38 @@
 //complete this code
-class Person {}
+class Person {
+	contructor(name,age){
+		this._name = name;
+		this._age = age;
+	}
+	get name(){
+		return this._name;
+	}
 
-class Student extends Person {}
+	set age(){
+		if(typeof age=== 'number' && age >=0){
+			this._age = age;
+		}else{
+			console.error("Age must be a non-negative number")
+		}
+	}
 
-class Teacher extends Person {}
+	get age(){
+		return this._age;
+	}
+	
+}
+
+class Student extends Person {
+	study(){
+		console.log("${this.name} is studying")
+	}
+}
+
+class Teacher extends Person {
+	teach(){
+		console.log("${this.name} is teaching")
+	}
+}
 
 // Do not change the code below this line
 window.Person = Person;
