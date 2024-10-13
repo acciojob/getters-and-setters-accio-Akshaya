@@ -1,48 +1,56 @@
-//complete this code
+// Person class attached to window
 window.Person = class Person {
-	contructor(name,age){
-		this._name = name;
-		this._age = age;
-	}
-	get name(){
-		return this._name;
-	}
-     get age(){
-		return this._age;
-	}
-	set age(newAge){
-		if(typeof newAge === 'number' && newAge >=0){
-			this._age = newAge;
-		}else{
-			console.error("Age must be a non-negative number");
-		}
-	}
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
+    }
 
-	
-}
+    // Getter for name
+    get name() {
+        return this._name;
+    }
 
-window.Student = class Student extends Person {
-	study(){
-		console.log('${this.name} is studying');
-	}
+    // Getter for age
+    get age() {
+        return this._age;
+    }
+
+    // Setter for age
+    set age(newAge) {
+        if (typeof newAge === 'number' && newAge >= 0) {
+            this._age = newAge;
+        } else {
+            console.error("Age must be a non-negative number");
+        }
+    }
 };
 
-window.Teacher = class Teacher extends Person {
-	teach(){
-		console.log('${this.name} is teaching');
-	}
+// Student class extending Person
+window.Student = class Student extends window.Person {
+    study() {
+        console.log(`${this.name} is studying`); // Fixed string interpolation
+    }
 };
-const person = new person("John",25);
-console.log(person.name);
+
+// Teacher class extending Person
+window.Teacher = class Teacher extends window.Person {
+    teach() {
+        console.log(`${this.name} is teaching`); // Fixed string interpolation
+    }
+};
+
+// Example usage
+const person = new Person("John", 25);
+console.log(person.name); // Output: John
 
 person.age = 30;
-console.log(person.age);
+console.log(person.age); // Output: 30
 
-const student = new student("Alice", 22);
-student.study();
+const student = new Student("Alice", 22);
+student.study(); // Output: Alice is studying
 
 const teacher = new Teacher("Bob", 40);
-teacher.teach();
+teacher.teach(); // Output: Bob is teaching
 
 // Do not change the code below this line
 window.Person = Person;
