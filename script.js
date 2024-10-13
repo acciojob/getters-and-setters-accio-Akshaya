@@ -7,36 +7,35 @@ class Person {
 	get name(){
 		return this._name;
 	}
-
-	set age(){
-		if(typeof age=== 'number' && age >=0){
-			this._age = age;
+     get age(){
+		return this._age;
+	}
+	set age(newAge){
+		if(typeof newAge === 'number' && newAge >=0){
+			this._age = newAge;
 		}else{
-			console.error("Age must be a non-negative number")
+			console.error("Age must be a non-negative number");
 		}
 	}
 
-	get age(){
-		return this._age;
-	}
 	
 }
 
 class Student extends Person {
 	study(){
-		console.log("${this.name} is studying")
+		console.log('${this.name} is studying');
 	}
 }
 
 class Teacher extends Person {
 	teach(){
-		console.log("${this.name} is teaching")
+		console.log('${this.name} is teaching');
 	}
 }
 const person = new person("John",25);
 console.log(person.name);
 
-person.age=30;
+person.age = 30;
 console.log(person.age);
 
 const student = new student("Alice", 22);
