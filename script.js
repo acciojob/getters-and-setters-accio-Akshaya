@@ -10,6 +10,9 @@ class Person {
         this.age = newAge;
         console.log("age set");
     }
+	get age(){
+		return this.age;
+	}
 }
 
 class Student extends Person {
