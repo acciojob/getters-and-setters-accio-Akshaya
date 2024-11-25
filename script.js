@@ -1,23 +1,7 @@
 class Person {
     constructor(name, age) {
-        this._name = name;
-        this._age = age;
-    }
-
-    get name() {
-        return this._name;
-    }
-
-    set name(name) {
-        this._name = name;
-    }
-
-    get age() {
-        return this._age;
-    }
-
-    set age(age) {
-        this._age = age;
+        this.name = name;
+        this.age = age;
     }
 }
 
@@ -33,7 +17,12 @@ class Teacher extends Person {
     }
 }
 
-// Example usage:
+// Expose the classes to the global window object
+window.Person = Person;
+window.Student = Student;
+window.Teacher = Teacher;
+
+// Example usage (optional):
 const person = new Person("John", 25);
 console.log(person.name); // Output: John
 
