@@ -1,7 +1,23 @@
 class Person {
     constructor(name, age) {
-        this.name = name;
-        this.age = age;
+        this._name = name; // Private field for name
+        this._age = age;   // Private field for age
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(name) {
+        this._name = name;
+    }
+
+    get age() {
+        return this._age;
+    }
+
+    set age(age) {
+        this._age = age;
     }
 }
 
@@ -24,10 +40,11 @@ window.Teacher = Teacher;
 
 // Example usage (optional):
 const person = new Person("John", 25);
-console.log(person.name); // Output: John
+console.log(person._name); // Output: John
+console.log(person._age);  // Output: 25
 
 person.age = 30;
-console.log(person.age); // Output: 30
+console.log(person._age);  // Output: 30
 
 const student = new Student("Alice", 22);
 student.study(); // Output: Alice is studying
